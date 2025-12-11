@@ -1,6 +1,6 @@
 # Polygloss
 
-Multilingual e-commerce engine (v2). Developed by [Kalba Lab](https://kalba.dev).
+Multilingual e-commerce engine (v2). Projects's page: [polygloss.dev](https://polygloss.dev/)
 
 Self-hosted solution for building online stores with native multi-language support. This is the second iteration of the platform, rebuilt from the ground up with a modern tech stack.
 
@@ -96,3 +96,4 @@ The checkout flow collects customer data and creates orders. Payment integration
 ---
 
 Developed by [Kalba Lab](https://kalba.dev)
+
