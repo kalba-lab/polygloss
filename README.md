@@ -93,7 +93,12 @@ Polygloss is intentionally shipped without a payment module. Every business has 
 The checkout flow collects customer data and creates orders. Payment integration is left for the implementer to add based on their specific needs.
 
 
+## License
+
+Proprietary software © 2025 [Kalba Lab](https://kalba.dev)<br>
+Commercial use requires a license agreement.<br>
+
 ---
 
-Developed by [Kalba Lab](https://kalba.dev)
+
 
