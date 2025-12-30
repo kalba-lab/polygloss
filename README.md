@@ -118,7 +118,7 @@ To enable:
    deepl.api.key=your-api-key-here
 ```
 
-Free tier: 500,000 characters/month. Without API key, manual translation entry works as usual.
+Without API key, manual translation entry works as usual.
 
 ## Payment Integration
 
