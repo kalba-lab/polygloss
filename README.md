@@ -1,8 +1,10 @@
 # Polygloss
 
-Multilingual e-commerce engine (v2). Project's page: [polygloss.dev](https://polygloss.dev/)
+**E-commerce that speaks every language**
 
-Self-hosted solution for building online stores with native multi-language support. This is the second iteration of the platform, rebuilt from the ground up with a modern tech stack.
+Self-hosted multilingual store engine. Native multi-language support built into the core, not bolted on as a plugin.
+
+Website: [polygloss.dev](https://polygloss.dev/)
 
 ## Live Demo
 
@@ -10,45 +12,39 @@ Self-hosted solution for building online stores with native multi-language suppo
 - **Admin Panel:** https://admin.polygloss.dev
   - Demo access: `demo@polygloss.dev` / `demo123` (read-only)
 
-## Why Polygloss
+## Problem
 
-Machine translation (Google Translate, browser plugins) doesn't work well for e-commerce. Product names get mangled, descriptions lose meaning, customers lose trust.
+Machine translation (Google Translate, browser plugins) doesn't work well for e-commerce. Product names get mangled, descriptions lose meaning, customers lose trust. Sales follow.
 
-Polygloss takes a different approach: every piece of content - products, categories, UI elements - is human-approved before going live. AI can speed up the workflow, but you always have the final say.
+## Solution
 
-## Key Features
+Every piece of content is human-approved before going live. AI can generate drafts to speed up your workflow, but you review and edit before anything reaches customers.
+```mermaid
+flowchart LR
+    A[Create product] --> B[Auto-translate via AI]
+    B --> C[Review & edit]
+    C --> D[Publish]
+    D --> E[Customers see quality content]
+```
 
-- **Native multilingual architecture** - not a plugin, built into the core
-- **Unlimited languages** - add as many as needed
-- **AI-assisted translations** - generate draft translations via DeepL API, then review and edit
-- **UI localization** - translate the entire interface, not just products
-- **Fallback system** - missing translation? Show default language
-- **Self-hosted** - your data stays on your server
-- **No payment lock-in** - integrate your own payment provider
-
-## Translation Workflow
-
-Polygloss combines the best of both worlds:
+## How it works
 
 1. **Create product** in your primary language
 2. **Auto-translate** to all other languages with one click (via DeepL API)
 3. **Review and edit** - fix nuances, adjust tone, correct terminology
 4. **Save** - only human-approved content goes live
 
-This is not machine translation for customers. This is a productivity tool for content managers. The difference: you always review before publishing.
+This is not machine translation for customers. This is a productivity tool for content managers.
 
-### AI Translation Setup
+## Features
 
-AI-assisted translation requires a DeepL API key. Each deployment uses its own API key — no shared tokens, full control over usage and costs.
-
-To enable:
-1. Get your API key at [deepl.com](https://www.deepl.com/pro-api)
-2. Add to `application.properties`:
-   ```
-   deepl.api.key=your-api-key-here
-   ```
-
-Free tier: 500,000 characters/month. Without API key, manual translation entry works as usual.
+- 🌍 **Unlimited languages** - add as many as needed
+- 🤖 **AI-assisted translations** - generate drafts via DeepL API, then review and edit
+- 🎨 **Full UI localization** - translate buttons, labels, checkout flow, everything
+- 🔄 **Fallback system** - missing translation? Show default language
+- 🏠 **Self-hosted** - your server, your data, your rules
+- 🔑 **Your own API keys** - full control over AI usage and costs
+- 💳 **No payment lock-in** - integrate your own payment provider
 
 ## Tech Stack
 
@@ -64,7 +60,6 @@ Free tier: 500,000 characters/month. Without API key, manual translation entry w
 - Angular Material (admin panel)
 
 ## Project Structure
-
 ```
 polygloss/
 ├── backend/
@@ -112,16 +107,25 @@ Key settings in `application.properties`:
 
 Full API documentation available via Swagger UI at `/swagger-ui.html`.
 
+## AI Translation Setup
+
+AI-assisted translation requires a DeepL API key. Each deployment uses its own API key - no shared tokens, full control over usage and costs.
+
+To enable:
+1. Get your API key at [deepl.com](https://www.deepl.com/pro-api)
+2. Add to `application.properties`:
+```
+   deepl.api.key=your-api-key-here
+```
+
+Free tier: 500,000 characters/month. Without API key, manual translation entry works as usual.
+
 ## Payment Integration
 
 Polygloss is intentionally shipped without a payment module. Every business has different requirements - payment providers, merchant accounts, regional regulations.
 
 The checkout flow collects customer data and creates orders. Payment integration is left for the implementer to add based on their specific needs.
 
-
 ## License
 
-Proprietary software © 2025 [Kalba Lab](https://kalba.dev)  
-Commercial use requires a license agreement.
-
----
+Proprietary © 2025 [Kalba Lab](https://kalba.dev). Commercial use requires a license agreement.
