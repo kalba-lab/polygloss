@@ -59,39 +59,6 @@ This is not machine translation for customers. This is a productivity tool for c
 - Tailwind CSS (storefront)
 - Angular Material (admin panel)
 
-## Project Structure
-```
-polygloss/
-├── backend/
-│   └── src/main/java/dev/polygloss/
-│       ├── config/         # Security, CORS, mail configuration
-│       ├── controller/     # REST endpoints
-│       ├── dto/            # Data Transfer Objects
-│       ├── entity/         # JPA entities
-│       ├── exception/      # Custom exceptions
-│       ├── mapper/         # Entity-DTO mappers
-│       ├── repository/     # Data access layer
-│       ├── security/       # JWT filter, authentication
-│       └── service/        # Business logic
-├── frontend-admin/         # Angular admin panel (Material UI)
-├── frontend-shop/          # Angular storefront (Tailwind CSS)
-└── README.md
-```
-
-## Configuration
-
-Key settings in `application.properties`:
-
-| Property | Description |
-|----------|-------------|
-| `spring.datasource.url` | PostgreSQL connection URL |
-| `spring.datasource.username` | Database user |
-| `spring.datasource.password` | Database password |
-| `jwt.secret` | JWT signing key (min 64 chars) |
-| `app.cors.allowed-origins` | Allowed frontend origins |
-| `spring.mail.*` | SMTP configuration for email notifications |
-| `deepl.api.key` | DeepL API key for AI translations (optional) |
-
 ## API Overview
 
 | Resource | Description |
@@ -105,19 +72,11 @@ Key settings in `application.properties`:
 | `/api/users` | User management (admin) |
 | `/api/checkout` | Public checkout flow with email verification |
 
-Full API documentation available via Swagger UI at `/swagger-ui.html`.
+Full API documentation available via Swagger UI.
 
 ## AI Translation Setup
 
 AI-assisted translation requires a DeepL API key. Each deployment uses its own API key - no shared tokens, full control over usage and costs.
-
-To enable:
-1. Get your API key at [deepl.com](https://www.deepl.com/pro-api)
-2. Add to `application.properties`:
-```
-   deepl.api.key=your-api-key-here
-```
-
 Without API key, manual translation entry works as usual.
 
 ## Payment Integration
